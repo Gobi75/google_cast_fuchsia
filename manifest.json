@@ -1,0 +1,10 @@
+{
+    "domain": "google_cast_fuchsia",
+    "name": "Google Cast (Fuchsia Ready)",
+    "documentation": "https://github.com/Gobi75/google_cast_fuchsia",
+    "requirements": ["catt==0.13.1"],
+    "version": "2.0.9",
+    "config_flow": true,
+    "dependencies": [],
+    "codeowners": ["@Gobi75"]
+  }

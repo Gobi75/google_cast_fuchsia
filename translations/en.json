@@ -1,0 +1,223 @@
+{
+  "entity": {
+    "sensor": {
+      "device_status": {
+        "state": {
+          "connected": "Connected",
+          "disconnected": "Disconnected",
+          "media_playing": "Media Playing",
+          "other_content": "Other Content",
+          "unknown": "Unknown",
+          "stopped": "Stopped",
+          "speaker_group_active": "Speaker Group Active",
+          "casting_in_progress": "Casting in Progress",
+          "assistant_active": "Google Assistant Active",
+          "stopped_by_timer": "Stopped by Schedule"
+        }
+      },
+      "total_devices": { "name": "Total Devices" },
+      "connected_devices": { "name": "Connected Devices" },
+      "disconnected_devices": { "name": "Disconnected Devices" },
+      "media_playing_devices": { "name": "Media Playing" },
+      "other_content_devices": { "name": "Other Content" },
+      "assistant_active_devices": { "name": "Assistant Active" },
+      "stopped_by_timer_devices": { "name": "Stopped by Schedule" }
+    }
+  },
+  "config": {
+    "title": "Continuously Casting Dashboards",
+    "step": {
+      "user": {
+        "title": "Global Settings",
+        "description": "Configure global settings for dashboard casting.\n\nAfter finishing, you will be able to add devices on the integration page.",
+        "data": {
+          "logging_level": "Logging Level",
+          "cast_delay": "Casting Delay (seconds)",
+          "scan_interval": "Scan Interval (seconds)",
+          "max_retries": "Max Retries",
+          "casting_timeout": "Casting Timeout (seconds)",
+          "start_time": "Default Start Time",
+          "end_time": "Default End Time",
+          "include_entity": "Control casting via entity",
+          "switch_entity_id": "Control Entity ID",
+          "switch_entity_state": "Required State"
+        },
+        "data_description": {
+          "cast_delay": "How often each device is checked (5-300 seconds)",
+          "scan_interval": "Device status refresh interval",
+          "max_retries": "Number of reconnection attempts",
+          "casting_timeout": "Wait time for Chromecast response",
+          "switch_entity_id": "Entity that enables/disables casting globally",
+          "switch_entity_state": "State that enables casting. Leave empty for defaults (on, true, home, open)"
+        }
+      }
+    },
+    "error": {
+      "invalid_device_name": "Enter a valid device name",
+      "device_already_exists": "Device with this name already exists",
+      "missing_dashboard_url": "Dashboard URL is required",
+      "unknown": "Unexpected error occurred",
+      "entity_not_found": "Entity not found in Home Assistant",
+      "update_failed": "Failed to save configuration"
+    },
+    "abort": {
+      "single_instance_allowed": "Only one instance of this integration is allowed.",
+      "options_updated": "Configuration saved!"
+    }
+  },
+  "options": {
+    "step": {
+      "init": {
+        "title": "Global Settings",
+        "description": "Configure global settings for all devices.\n\n**Configured devices:** {device_count}\n\nTo add or manage devices, go back and use the 'Add device' button.",
+        "data": {
+          "logging_level": "Logging Level",
+          "cast_delay": "Casting Delay (seconds)",
+          "scan_interval": "Scan Interval (seconds)",
+          "max_retries": "Max Retries",
+          "casting_timeout": "Casting Timeout (seconds)",
+          "start_time": "Default Start Time",
+          "end_time": "Default End Time",
+          "include_entity": "Control casting via entity",
+          "switch_entity_id": "Control Entity ID",
+          "switch_entity_state": "Required State"
+        },
+        "data_description": {
+          "cast_delay": "How often each device is checked (5-300 seconds)",
+          "scan_interval": "Device status refresh interval",
+          "max_retries": "Number of reconnection attempts",
+          "casting_timeout": "Wait time for Chromecast response",
+          "switch_entity_id": "Entity that enables/disables casting globally",
+          "switch_entity_state": "State that enables casting. Leave empty for defaults"
+        }
+      }
+    },
+    "error": {
+      "entity_not_found": "Entity not found in Home Assistant",
+      "unknown": "Unexpected error occurred"
+    },
+    "abort": {
+      "options_updated": "Settings saved!"
+    }
+  },
+  "config_subentries": {
+    "device": {
+      "title": "Chromecast Device",
+      "initiate_flow": {
+        "user": "Add device"
+      },
+      "step": {
+        "user": {
+          "title": "Add new device",
+          "description": "Enter the name or IP address of your Chromecast device.\n\nYou can find the name in the Google Home app or device settings > Device information.",
+          "data": {
+            "device_name": "Device name or IP address"
+          },
+          "data_description": {
+            "device_name": "e.g., 'Living Room Display' or '192.168.1.50'"
+          }
+        },
+        "add_dashboard": {
+          "title": "Add dashboard to {device_name}",
+          "description": "Configure a dashboard to cast to this device.\n\n**Added dashboards:** {dashboard_count}",
+          "data": {
+            "dashboard_url": "Dashboard URL",
+            "volume": "Volume (0-100)",
+            "enable_time_window": "Use custom time window",
+            "start_time": "Start Time",
+            "end_time": "End Time",
+            "include_entity": "Control with entity state",
+            "switch_entity_id": "Control Entity ID",
+            "switch_entity_state": "Required State",
+            "include_speaker_groups": "Check speaker groups",
+            "speaker_groups": "Speaker group names",
+            "add_another": "Add another dashboard after this"
+          },
+          "data_description": {
+            "dashboard_url": "Full address (e.g., http://192.168.1.100:8123/lovelace/home?kiosk)",
+            "volume": "Device volume during casting",
+            "speaker_groups": "Comma-separated list of speaker group names"
+          }
+        },
+        "reconfigure_device": {
+          "title": "{device_name}{dashboard_info}",
+          "description": "Edit device and dashboard settings.",
+          "data": {
+            "device_name": "Device Name",
+            "dashboard_url": "Dashboard URL",
+            "override_volume": "Use custom volume",
+            "volume": "Device volume during casting (0-100)",
+            "enable_time_window": "Use custom time window",
+            "start_time": "Start Time",
+            "end_time": "End Time",
+            "include_entity": "Control with entity state",
+            "switch_entity_id": "Control Entity ID",
+            "switch_entity_state": "Required State",
+            "include_speaker_groups": "Check speaker groups",
+            "speaker_groups": "Speaker group names",
+            "add_another_dashboard": "Add another dashboard after saving",
+            "change_dashboard": "Edit another dashboard",
+            "delete_this_dashboard": "Delete this dashboard"
+          },
+          "data_description": {
+            "device_name": "Name or IP address of the Chromecast device",
+            "dashboard_url": "Full address (e.g., http://192.168.1.100:8123/lovelace/home?kiosk)",
+            "volume": "",
+            "speaker_groups": "Comma-separated list of speaker group names",
+            "add_another_dashboard": "Saves this dashboard and opens a blank form for a new one",
+            "change_dashboard": "Save changes and pick another dashboard to edit",
+            "delete_this_dashboard": "Delete this dashboard (cannot delete the last one)"
+          }
+        },
+        "reconfigure_select_dashboard": {
+          "title": "{device_name}",
+          "description": "This device has **{dashboard_count} dashboards**. Select one to edit:",
+          "data": {
+            "dashboard_action": "Select dashboard"
+          }
+        },
+        "reconfigure_rename": {
+          "title": "Rename device",
+          "description": "Enter a new name for this device.",
+          "data": {
+            "new_device_name": "New device name"
+          }
+        },
+        "reconfigure_add_dashboard": {
+          "title": "Add dashboard to {device_name}",
+          "description": "Configure a new dashboard to cast to this device.",
+          "data": {
+            "dashboard_url": "Dashboard URL",
+            "override_volume": "Use custom volume",
+            "volume": "Device volume during casting (0-100)",
+            "enable_time_window": "Use custom time window",
+            "start_time": "Start Time",
+            "end_time": "End Time",
+            "include_entity": "Control with entity state",
+            "switch_entity_id": "Control Entity ID",
+            "switch_entity_state": "Required State",
+            "include_speaker_groups": "Check speaker groups",
+            "speaker_groups": "Speaker group names"
+          },
+          "data_description": {
+            "dashboard_url": "Full address (e.g., http://192.168.1.100:8123/lovelace/home?kiosk)",
+            "volume": "",
+            "speaker_groups": "Comma-separated list of speaker group names"
+          }
+        }
+      },
+      "error": {
+        "invalid_device_name": "Enter a valid device name",
+        "device_already_exists": "Device with this name already exists",
+        "missing_dashboard_url": "Dashboard URL is required",
+        "entity_not_found": "Entity not found",
+        "cannot_delete_last": "Cannot delete the only dashboard. Add another one first or delete the entire device.",
+        "unknown": "Unexpected error occurred"
+      },
+      "abort": {
+        "subentry_updated": "Device saved!",
+        "reconfigure_successful": "Device configured successfully."
+      }
+    }
+  }
+}
