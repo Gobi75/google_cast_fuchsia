@@ -21,7 +21,7 @@ DEFAULT_LOGGING_LEVEL = "warning"
 LOGGING_LEVELS = ["debug", "info", "warning", "error", "critical"]
 
 # File paths
-CONFIG_DIR = "/config/continuously_casting_dashboards"
+CONFIG_DIR = "/config/google_cast_fuchsia"
 STATUS_FILE = f"{CONFIG_DIR}/status.json"
 HEALTH_STATS_FILE = f"{CONFIG_DIR}/health_stats.json"
 
