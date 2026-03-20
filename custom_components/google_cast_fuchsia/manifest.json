@@ -6,5 +6,7 @@
     "version": "2.0.9",
     "config_flow": true,
     "dependencies": [],
-    "codeowners": ["@Gobi75"]
+    "codeowners": ["@Gobi75"],
+    "iot_class": "local_polling",
+    "homeassistant": "2025.2.0"
   }
