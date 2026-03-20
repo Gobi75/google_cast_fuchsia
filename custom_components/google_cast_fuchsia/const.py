@@ -1,6 +1,6 @@
 """Constants for the Continuously Casting Dashboards integration."""
 
-DOMAIN = "continuously_casting_dashboards"
+DOMAIN = "google_cast_fuchsia"
 CONF_SWITCH_ENTITY = "switch_entity_id"
 CONF_SWITCH_ENTITY_STATE = "switch_entity_state"
 PLATFORMS = ["sensor"]  # Add sensor platform here!
