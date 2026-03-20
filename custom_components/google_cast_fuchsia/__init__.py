@@ -431,7 +431,7 @@ async def async_setup_entry(hass: HomeAssistant, entry: ConfigEntry) -> bool:
             retry_delay = int(config.get(CONF_RETRY_DELAY, DEFAULT_RETRY_DELAY))
 
             # Ensure directory exists
-            os.makedirs("/config/continuously_casting_dashboards", exist_ok=True)
+            os.makedirs("/config/google_cast_fuchsia", exist_ok=True)
 
             # Set up logging based on config
             log_level = logging_level.upper()
