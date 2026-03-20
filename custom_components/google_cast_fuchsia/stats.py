@@ -33,7 +33,7 @@ class StatsManager:
         self.device_manager = None  # Will be set later
 
         # Ensure directory exists
-        os.makedirs('/config/continuously_casting_dashboards', exist_ok=True)
+        os.makedirs('/config/google_cast_fuchsia', exist_ok=True)
 
     def set_device_manager(self, device_manager):
         """Set the device manager reference."""
@@ -76,7 +76,7 @@ class StatsManager:
         # Save health stats to file
         try:
             def write_health_stats():
-                os.makedirs('/config/continuously_casting_dashboards', exist_ok=True)
+                os.makedirs('/config/google_cast_fuchsia', exist_ok=True)
                 with open(HEALTH_STATS_FILE, 'w') as f:
                     json.dump(self.health_stats, f, indent=2)
                     
@@ -114,7 +114,7 @@ class StatsManager:
         # Save status data to file for Home Assistant
         try:
             def write_status_file():
-                os.makedirs('/config/continuously_casting_dashboards', exist_ok=True)
+                os.makedirs('/config/google_cast_fuchsia', exist_ok=True)
                 with open(STATUS_FILE, 'w') as f:
                     json.dump(status_data, f, indent=2)
 
