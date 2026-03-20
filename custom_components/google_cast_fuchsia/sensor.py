@@ -120,8 +120,8 @@ class ContinuouslyCastingSensorBase(SensorEntity):
         """Return device information."""
         return {
             "identifiers": {(DOMAIN, self.entry.entry_id)},
-            "name": "Continuously Casting Dashboards",
-            "manufacturer": "Continuously Casting Dashboards",
+            "name": "Google Cast (Fuchsia Ready",
+            "manufacturer": "Google Cast (Fuchsia Ready",
             "model": "Integration",
         }
 
