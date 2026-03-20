@@ -1,6 +1,6 @@
 {
   "name": "Google Cast (Fuchsia Ready)",
   "domains": ["google_cast_fuchsia"],
-  "documentation": "https://github.com/Gobi75/continuously-casting-dashboards/blob/main/README.md",
+  "documentation": "https://github.com/Gobi75/google_cast_fuchsia/blob/main/README.md",
   "version": "2.1.9"
 }
